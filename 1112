@@ -1,0 +1,116 @@
+# board = []
+# for i in range(100):
+#     board.append([0]*100)
+# n = int(input())
+# for _ in range(n):
+#     x, y = input().split()
+#     x = int(x)
+#     y = int(y)
+#     # 해당 자리가 색종이로 덮여있다면 1로 변경
+#     # 그 다음에 1의 개수를 센다. == 넓이
+#     for i in range(x, x+10):
+#         for j in range(y, y+10):
+#             board[i][j] = 1
+# answer = 0
+# for b in board:
+#     answer += b.count(1)
+# print(answer)
+
+# 복습
+# 함수(def)를 쓰는 이유
+# 1. 긴 코드를 쉽게 사용하기 위해서
+# 2. 입력값에 따라서 다른 결과 값은 토출하기 위해서
+
+# def 함수명(매개변수)
+#   실행문1
+#   실행문2
+# return
+
+
+# def sum_nums(nums):
+#     answer = 0
+#     for i in nums:
+#         answer += i
+#     return answer
+# nums = []
+# n = int(input())    #몇번 입력받을지에 대한 수
+# for _ in range(n):
+#     x = int(input())
+#     nums.append(x)
+# print(sum_nums(nums))
+# n을 입력받고 n번 수를 입력받는다. 그 수들을 nums에 담아서 sum_nums 함수를 실행한다.
+# 결과값은 nums에 있는 값들을 더한 값이다.
+
+
+# def sum_nums(*nums):
+#     answer = 0
+#     for i in nums:
+#         answer += i
+#     return answer
+#  랜덤한 수들을 무작위 개수만큼 함수에 전달했을 때 돌아올 결과값은 그 수들의 합이다.
+
+# print(sum_nums(1,2,3,4,5,6,7,8,9,10)) # 출력값 -> 55
+# print(sum_nums(1,2,3,4,5)) # 출력값 -> 15
+# print(sum_nums(12,13,15)) # 출력값 -> 40
+
+# def print_Hi_or_value(value = "Hi"):
+#     print(value)
+# print_Hi_or_string()를 실행시킬때 인수를 넘기면 그 값을 출력하고,
+# 아무것도 넘기지 않을 경우 Hi를 출력한다.
+# a = [1,2,3,4,5]
+# print_Hi_or_value(a)
+
+# pop, replace, append, extend
+
+# pop(index): 리스트에서 값을 추출해주는 함수
+# a = [5,6,7,8]
+#
+# def my_pop(_list, index = -1):
+#     result = _list[index]
+    # del _list[index]
+    # return _list[index], _list
+
+# pop과 동일한 동작을 하는 함수 my_pop을 구현하시오 단,실행방식은 my_pop(리스트, 인덱스번호)이다.
+# 인덱스 번호에 값을 넣지 않을 경우 자동으로 마지막 원소 값을 추출하면 된다.
+# print(my_pop(a,2)) #-> (7, [5,6,8])
+# print(my_pop(a)) #-> (8, [5,6,7])
+
+
+# def my_replace(string, old, new, count = 0):
+#     if count == 0:
+#         count = len(string)
+#
+#     new_string = ""
+#     for i in string:
+#             if count and i == old:
+#                 new_string += new
+#                 count -= 1
+#             else:
+#                 new_string += i
+#     return new_string
+#
+# c =  "CCCCCC"
+# print(my_replace(c,'C', "A"))  #출력값 => "AAAAAA"
+# print(my_replace(c,'C',"A",3))  #출력값 => "AAACCC"
+
+
+# def isPrime(n):
+# # 소수일 경우 True 아닐경우 False를 리턴한다.
+# # 소수:1과 자기 자신(n)으로 밖에 나누어지지 않는 수
+#    for i in range(2,n):
+#        if n %i == 0:
+#            return False
+#        return True
+# 
+# 
+# def solution(nums):
+#     cnt = 0
+# # num에서 3개의 수들을 더해준다.
+# # 더한 숫자가 소수인지를 판별한다. #함수(is_Prime())로 만들어서 확인한다.
+# # 소수일 경우 정답의 개수를 등가 시켜준다.
+#     if isPrime(x1 + x2 + x3):
+#         cnt += 1
+#     return cnt
+# 
+# nums = [1,2,3,4]
+# print(solution(nums))
